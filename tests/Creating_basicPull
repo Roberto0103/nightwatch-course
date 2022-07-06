@@ -1,0 +1,22 @@
+module.exports = {
+    'Creating basic' : function(browser) {
+      browser
+      .windowMaximize()
+      .url('https://www.unosquare.com')
+      .waitForElementVisible('body')
+      browser.assert.titleContains('Digital Transformation Services | Agile Staffing Solutions | Unosquare')
+      browser.assert.not.titleContains('qwertyuihhdfjñlk')
+      browser.assert.urlContains('unosquare')
+      browser.assert.not.urlContains('unosquare.com.mx')
+      browser.assert.urlEquals('https://www.unosquare.com/')
+      browser.assert.not.urlEquals('https://www.google.com');
+
+    
+    }
+};
+
+
+
+
+
+

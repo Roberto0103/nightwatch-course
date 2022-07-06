@@ -1,0 +1,24 @@
+
+
+module.exports = {
+    'Multiple Scrips' : function(browser) {
+      browser
+      .windowMaximize()
+      .url('https://nightwatchjs.org/')
+      .waitForElementVisible('body')
+      .assert.titleContains('Nightwatch.js')
+      .click(" .nav .nav-item a[href = 'https://nightwatchjs.org/api/']")
+      .click("ul li .btn  a[href = '/api/assert/']")
+      .click("ul li .btn  a[href = '/api/commands/']")
+      .assert.containsText("li .btn a[href = '/api/commands/']", 'API Commands')
+      browser.assert.textEquals("footer .footer-text .address","Nightwatch.js was initially created in Oslo, Norway by Pineview.io – an independent software consultancy; it is now being maintained at BrowserStack with help from all our contributors.");
+      
+     
+      
+    }
+  };
+  
+  //.saveScreenshot('tests_output/pic2.png');
+  //.assert.containsText("footer .footer-text p address", "Nightwatch.js was initially created in Oslo, Norway by")
+  //.assert.textMatches('header','Nightwatch');
+  //'Nightwatch.js was initially created in Oslo, Norway by Pineview.io – an independent software consultancy; it is now being maintained at BrowserStack with help from all our contributors.');
